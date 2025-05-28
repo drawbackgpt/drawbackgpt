@@ -28,13 +28,37 @@
   </style>
 </head>
 <body>
-  <header>
-    <img src="assets/logo.png" alt="Drawback GPT Logo" />
-    <nav>
-      <a href="#proceso" style="color:white; margin-left: 1rem; text-decoration: none;">Nuestro Proceso</a>
-      <a href="#beneficios" style="color:white; margin-left: 1rem; text-decoration: none;">Beneficios</a>
+<header>
+  <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+    <img src="assets/logodbgpt-01.png" alt="Drawback GPT Logo" style="height: 50px;" />
+    <input type="checkbox" id="menu-toggle" style="display:none;">
+    <label for="menu-toggle" style="font-size: 2rem; cursor: pointer; color: white; display: none;" id="menu-icon">&#9776;</label>
+    <nav id="nav-links" style="display: flex; gap: 1rem;">
+      <a href="#proceso" style="color:white; text-decoration: none;">Nuestro Proceso</a>
+      <a href="#beneficios" style="color:white; text-decoration: none;">Beneficios</a>
     </nav>
-  </header>
+  </div>
+  <style>
+    @media (max-width: 768px) {
+      #menu-icon { display: block; }
+      #nav-links {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: #0c2d5c;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem;
+        display: none;
+        border-radius: 8px;
+      }
+      #menu-toggle:checked + label + #nav-links {
+        display: flex;
+      }
+    }
+  </style>
+</header>
 
   <div class="hero">
     <h1>Soluciones inteligentes para la devolución de Drawback</h1>
