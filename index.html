@@ -28,13 +28,84 @@
   </style>
 </head>
 <body>
-  <header>
+<header>
+  <div class="container">
     <img src="assets/logo.png" alt="Drawback GPT Logo" />
+    <input type="checkbox" id="toggle">
+    <label for="toggle" class="hamburger">&#9776;</label>
     <nav>
-      <a href="#proceso" style="color:white; margin-left: 1rem; text-decoration: none;">Nuestro Proceso</a>
-      <a href="#beneficios" style="color:white; margin-left: 1rem; text-decoration: none;">Beneficios</a>
+      <a href="#proceso">Nuestro Proceso</a>
+      <a href="#beneficios">Beneficios</a>
     </nav>
-  </header>
+  </div>
+</header>
+
+<style>
+  header {
+    background-color: #0c2d5c;
+    color: white;
+    padding: 1rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  header img {
+    height: 40px;
+  }
+
+  nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  #toggle {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+
+    nav {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #0c2d5c;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+      border-radius: 0 0 0 8px;
+      display: none;
+      width: 200px;
+      z-index: 99;
+    }
+
+    #toggle:checked + .hamburger + nav {
+      display: flex;
+    }
+  }
+</style>
+
 
   <div class="hero">
     <h1>Soluciones inteligentes para la devolución de Drawback</h1>
