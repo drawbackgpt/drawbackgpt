@@ -29,84 +29,36 @@
 </head>
 <body>
 <header>
-  <div class="header-container">
-    <div class="logo-container">
-      <img src="assets/logo.png" alt="Drawback GPT Logo" />
-    </div>
-    <input type="checkbox" id="nav-toggle" />
-    <label for="nav-toggle" class="hamburger">&#9776;</label>
-    <nav class="nav-menu">
-      <a href="#proceso">Nuestro Proceso</a>
-      <a href="#beneficios">Beneficios</a>
+  <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+    <img src="assets/logodbgpt-01.png" alt="Drawback GPT Logo" style="height: 50px;" />
+    <input type="checkbox" id="menu-toggle" style="display:none;">
+    <label for="menu-toggle" style="font-size: 1.5rem; cursor: pointer; color: white; display: none;" id="menu-icon">&#9776;</label>
+    <nav id="nav-links" style="display: flex; gap: 1rem;">
+      <a href="#proceso" style="color:white; text-decoration: none;">Nuestro Proceso</a>
+      <a href="#beneficios" style="color:white; text-decoration: none;">Beneficios</a>
     </nav>
   </div>
+  <style>
+    @media (max-width: 768px) {
+      #menu-icon { display: block; }
+      #nav-links {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: #0c2d5c;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem;
+        display: none;
+        border-radius: 8px;
+      }
+      #menu-toggle:checked + label + #nav-links {
+        display: flex;
+      }
+    }
+  </style>
 </header>
-
-<style>
-  header {
-    background-color: #0c2d5c;
-    padding: 1rem 2rem;
-  }
-
-  .header-container {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-  }
-
-  .logo-container img {
-    height: 40px;
-  }
-
-  .nav-menu {
-    display: flex;
-    gap: 2rem;
-  }
-
-  .nav-menu a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1rem;
-  }
-
-  .hamburger {
-    display: none;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-  }
-
-  #nav-toggle {
-    display: none;
-  }
-
-  @media (max-width: 768px) {
-    .hamburger {
-      display: block;
-    }
-
-    .nav-menu {
-      position: absolute;
-      top: 60px;
-      right: 0;
-      background-color: #0c2d5c;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 1rem;
-      border-radius: 0 0 0 12px;
-      display: none;
-      width: 200px;
-    }
-
-    #nav-toggle:checked + .hamburger + .nav-menu {
-      display: flex;
-    }
-  }
-</style>
 
 
   <div class="hero">
